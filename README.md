@@ -1,25 +1,29 @@
 # Scripting-Assignment-6-Answers
 #Question 1
 class Student
-def __init__(self, first_name, last_name, email, all_course):
+def__init__(self, first_name, last_name, email, all_course):
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
         self.all_course = all_course
-#read sentences and extract only line which contain the keywords
+	
+#Read sentences & extract only line which contain the keywords
 import students.txt
 import re
-#open file
+
+#Open file
 keyword = open('students.txt', 'r', encoding = 'utf-8').readlines()
 texts = open('sent_token.txt', 'r', encoding = 'utf-8').readlines()
-#define function to read file and remove next line symbol
+
+#Define function to read file & remove next line symbol
 def read_file(students.txt):
     texts = []
     for word in file:
         text = word.rstrip('\n')
         texts.append(text)
     return texts
-#save to variable        
+    
+#Save to variable   
 key = read_file(keyword)
 corpus = read_file(texts
 from nltk.tokenize import sent_tokenize
@@ -48,49 +52,50 @@ for i in range(0,n):
 	m = input('Enter Marks: ')
 	D[x, y] = (z, m)
 	
-#define a function for shorting names based on first name
+#Define a function for shorting names based on first name
 def sort():
 	ls = list()
-	# fetch key and value using items() method
+	#Fetch key & value using items() method
 	for sname,details in D.items():
 	
-		# store key parts as an tuple
+		#Store key parts as an tuple
 		tup = (sname[0],sname[1])
 		
-		#add tuple to the list
+		#Add tuple to the list
 		ls.append(tup)
 		
-    #append the list of students from the file
+    #Append the list of students from the file
     ls.append(students.txt)
     
-	# sort the final list of tuples
+	#Sort the final list of tuples
 	ls = sorted(ls)
 	for i in ls:
 	
-		# print first name and second name
+		#Print first name & second name
 		print(i[0],i[1])
 	return
 
-#define a function for finding the minimum marks in stored data
+#Define a function for finding the minimum marks in stored data
 def minmarks():
 	ls = list()
-	#fetch key and value using items() methods
+	
+	#Fetch key & value using items() methods
 	for sname,details in D.items():
-		#add details second element
-		#(marks) to the list
+	
+		#Add details second element (marks) to the list
 		ls.append(details[1])
 	
-	#sort the list elemnts
+	#Sort the list elemnts
 	ls = sorted(ls)
 	print("Minimum marks: ", min(ls))
 	
 	return
 
-#define a function for searching student contact number
+#Define a function for searching student contact number
 def searchdetail(fname):
 	ls = list()
 	
-	for sname,details in D.items():
+	for sname, details in D.items():
 	
 		tup=(sname,details)
 		ls.append(tup)
@@ -100,7 +105,7 @@ def searchdetail(fname):
 			print(i[1][0])
 	return
 
-#define a function for asking the options
+#Define a function for asking the options
 def option():
 
 	choice = int(input('Enter the operation detail: \n \
@@ -111,14 +116,14 @@ def option():
 	Option: '))
 	
 	if choice == 1:
-		#function call
+		#Function call
 		sort()
 		print('Want to perform some other operation? Y or N: ')
 		inp = input()
 		if inp == 'Y':
 			option()
 			
-		#exit function call
+		#Exit function call
 		exit()
 		
 	elif choice == 2:
@@ -147,10 +152,9 @@ def option():
 option()
 
   
-  
-  
-  
 #Question 2
+
+#Read the contents of each .txt file
 f1 = open( 'f1.txt', 'r')
 content = f1.read()
 f1.close()
@@ -163,6 +167,7 @@ f3 = open('f3.txt', 'r')
 content3 = f3.read()
 f3.close
 
+#Write the contents of each .txt file into one function file called final_file.txt
 f4 = open('final_file.txt', 'w')
 f4.write(content)
 f4.write(content2)
@@ -173,50 +178,3 @@ f4.close()
 for x in l:
     if not os.path.exists(x):
         print >> sys.stderr , "No such file", x
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
