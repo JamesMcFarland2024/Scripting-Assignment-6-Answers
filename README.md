@@ -1,5 +1,7 @@
 # Scripting-Assignment-6-Answers
+
 #Question 1
+
 class Student
 def__init__(self, first_name, last_name, email, all_course):
         self.first_name = first_name
@@ -8,14 +10,17 @@ def__init__(self, first_name, last_name, email, all_course):
         self.all_course = all_course
 	
 #Read sentences & extract only line which contain the keywords
+
 import students.txt
 import re
 
 #Open file
+
 keyword = open('students.txt', 'r', encoding = 'utf-8').readlines()
 texts = open('sent_token.txt', 'r', encoding = 'utf-8').readlines()
 
 #Define function to read file & remove next line symbol
+
 def read_file(students.txt):
     texts = []
     for word in file:
@@ -24,6 +29,7 @@ def read_file(students.txt):
     return texts
     
 #Save to variable   
+
 key = read_file(keyword)
 corpus = read_file(texts
 from nltk.tokenize import sent_tokenize
@@ -46,6 +52,7 @@ D = dict()
 n = int(input('How many student records you want to store? '))
 
 #Add student information to the dictionary
+
 for i in range(0,n):
 	x, y = input("Enter the complete name (First and last name) of student: ").split()
 	z = input("Enter contact number: ")
@@ -53,45 +60,59 @@ for i in range(0,n):
 	D[x, y] = (z, m)
 	
 #Define a function for shorting names based on first name
+
 def sort():
 	ls = list()
+	
 	#Fetch key & value using items() method
+	
 	for sname,details in D.items():
 	
 		#Store key parts as an tuple
+		
 		tup = (sname[0],sname[1])
 		
 		#Add tuple to the list
+		
 		ls.append(tup)
 		
-    #Append the list of students from the file
-    ls.append(students.txt)
+  #Append the list of students from the file
+   
+   ls.append(students.txt)
     
 	#Sort the final list of tuples
+	
 	ls = sorted(ls)
 	for i in ls:
 	
 		#Print first name & second name
+		
 		print(i[0],i[1])
+	
 	return
 
 #Define a function for finding the minimum marks in stored data
+
 def minmarks():
 	ls = list()
 	
 	#Fetch key & value using items() methods
+	
 	for sname,details in D.items():
 	
 		#Add details second element (marks) to the list
+		
 		ls.append(details[1])
 	
 	#Sort the list elemnts
+	
 	ls = sorted(ls)
 	print("Minimum marks: ", min(ls))
 	
 	return
 
 #Define a function for searching student contact number
+
 def searchdetail(fname):
 	ls = list()
 	
@@ -106,6 +127,7 @@ def searchdetail(fname):
 	return
 
 #Define a function for asking the options
+
 def option():
 
 	choice = int(input('Enter the operation detail: \n \
